@@ -3,8 +3,11 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import "./Weather.css";
 import "../../styles/button.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Weather(props) {
+  const { isLoading, isAuthenticated } = useAuth0();
+
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
 
@@ -20,6 +23,14 @@ function Weather(props) {
   }
 
   fetchWeather();
+
+  if (isLoading) {
+    return <div></div>;
+  }
+
+  if (!isAuthenticated) {
+    window.location.href = "/";
+  }
 
   return (
     <div className="weather-cntr">
