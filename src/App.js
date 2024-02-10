@@ -6,7 +6,7 @@ import Weather from "./components/Weather/Weather";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar></Navbar>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Landing />}></Route>
         <Route path="/weather" element={<Weather />}></Route>
