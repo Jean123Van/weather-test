@@ -22,9 +22,7 @@ function Home(props) {
       return;
     }
 
-    const { lat, lon } = value.data[0];
-
-    window.location.href = `/weather?long=${lon}&lat=${lat}`;
+    window.location.href = `/weather?city=${city}`;
   }
 
   return (
