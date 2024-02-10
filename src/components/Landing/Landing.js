@@ -1,5 +1,6 @@
 import React from "react";
 import "./Landing.css";
+import "../../styles/button.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function Landing(props) {
@@ -14,15 +15,11 @@ function Landing(props) {
   return (
     <div className="landing-cntr">
       <p>{description}</p>
-      <button onClick={() => loginWithPopup({ connection: "github" })}>
-        Login
-      </button>
       <button
-        onClick={() =>
-          logout({ logoutParams: { returnTo: window.location.origin } })
-        }
+        className="button-primary"
+        onClick={() => loginWithPopup({ connection: "github" })}
       >
-        Logout
+        Login
       </button>
     </div>
   );
