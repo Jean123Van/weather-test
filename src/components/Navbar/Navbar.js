@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function Navbar(props) {
-  const { logout } = useAuth0();
+  const { logout, isLoading, isAuthenticated } = useAuth0();
+
+  let display = isAuthenticated ? "inline" : "none";
 
   return (
     <div className="navbar-cntr">
@@ -16,6 +18,7 @@ function Navbar(props) {
       <h1>Weather Forecast</h1>
       <button
         className="button-primary button-logout"
+        style={{ display: display }}
         onClick={() =>
           logout({ logoutParams: { returnTo: window.location.origin } })
         }
