@@ -28,7 +28,7 @@ function Landing(props) {
     );
   }
 
-  return <Home />;
+  return <Home user={user} />;
 }
 
 export default Landing;

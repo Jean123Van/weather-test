@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+.home-cntr {
+  width: 100%;
+  padding: 0px 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-cntr > h2 {
+  margin: 0;
+}
+
+.home-search {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  max-width: 400px;
+  height: 40px;
+  position: relative;
+}
+
+.home-search > input {
+  padding-left: 35px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+.home-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.home-cntr > button {
+  margin-top: 30px;
+}
