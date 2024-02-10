@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import "./Weather.css";
@@ -7,6 +7,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 function Weather(props) {
   const { isLoading, isAuthenticated } = useAuth0();
+  const [isDataLoading, setIsDataLoading] = useState(true);
+  const [data, setData] = useState();
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -19,12 +21,16 @@ function Weather(props) {
       url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2a14c2c6a798c6f44b3081f334b44d7f&units=metric`,
     }).catch(() => {});
 
-    console.log(value);
+    setData(value.data);
+
+    setIsDataLoading(false);
   }
 
-  fetchWeather();
+  useEffect(() => {
+    fetchWeather();
+  }, []);
 
-  if (isLoading) {
+  if (isLoading || isDataLoading) {
     return <div></div>;
   }
 
@@ -53,9 +59,18 @@ function Weather(props) {
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
+            <td>
+              {new Date().toLocaleDateString("en-US", {
+                month: "2-digit",
+                day: "2-digit",
+                year: "numeric",
+              })}
+            </td>
+            <td>{data.main.temp}</td>
+            <td>{data.weather[0].description}</td>
+            <td>{data.weather[0].main}</td>
+            <td>{data.main.pressure}</td>
+            <td>{data.main.humidity}</td>
           </tr>
         </tbody>
       </table>

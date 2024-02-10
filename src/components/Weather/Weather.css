@@ -8,21 +8,22 @@
 }
 
 .weather-cntr > button {
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 .weather-table {
-  border: 2px solid black;
   width: fit-content;
   background-color: rgb(179, 179, 179);
 }
 
-.table-header {
-}
-
-thead {
-}
-
-thead > tr {
+thead > tr > th {
   text-align: left;
+  vertical-align: baseline;
+  background-color: white;
+  padding: 5px 10px;
+}
+
+tbody > tr > td {
+  background-color: white;
+  padding: 5px 10px;
 }
