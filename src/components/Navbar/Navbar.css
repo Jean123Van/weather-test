@@ -17,3 +17,13 @@
   color: rgb(108, 108, 218);
   padding-right: 20px;
 }
+
+/* @media screen and (max-width: 490px) {
+  .navbar-cntr > h1 {
+    display: none;
+  }
+
+  .navbar-cntr {
+    height: 83px;
+  }
+} */
