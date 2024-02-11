@@ -9,24 +9,6 @@ function Navbar(props) {
   const { logout, isLoading, isAuthenticated } = useAuth0();
 
   let display = isAuthenticated ? "inline" : "none";
-  // const [isMobileView, setIsMobileView] = useState(false);
-
-  // useEffect(() => {
-  //   window.addEventListener("resize", (e) => {
-  //     console.log(isMobileView);
-  //     if (e.currentTarget.innerWidth >= 490) {
-  //       if (isMobileView === true) {
-  //         setIsMobileView(false);
-  //       }
-  //     }
-
-  //     if (e.currentTarget.innerWidth < 490) {
-  //       if (isMobileView === false) {
-  //         setIsMobileView(true);
-  //       }
-  //     }
-  //   });
-  // }, []);
 
   return (
     <div className="navbar-cntr">

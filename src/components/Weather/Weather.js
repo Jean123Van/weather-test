@@ -53,10 +53,10 @@ function Weather(props) {
               Temp
               <br /> (F)
             </th>
-            <th>Description</th>
-            <th>Main</th>
-            <th>Pressure</th>
-            <th>Humidity</th>
+            <th className="hide-cell">Description</th>
+            <th className="hide-cell">Main</th>
+            <th className="hide-cell">Pressure</th>
+            <th className="hide-cell">Humidity</th>
           </tr>
         </thead>
         <tbody>
@@ -69,10 +69,10 @@ function Weather(props) {
               })}
             </td>
             <td>{data.main.temp}</td>
-            <td>{data.weather[0].description}</td>
-            <td>{data.weather[0].main}</td>
-            <td>{data.main.pressure}</td>
-            <td>{data.main.humidity}</td>
+            <td className="hide-cell">{data.weather[0].description}</td>
+            <td className="hide-cell">{data.weather[0].main}</td>
+            <td className="hide-cell">{data.main.pressure}</td>
+            <td className="hide-cell">{data.main.humidity}</td>
           </tr>
         </tbody>
       </table>

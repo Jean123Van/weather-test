@@ -10,6 +10,11 @@ function Home(props) {
   const [isShowError, setIsShowError] = useState(false);
 
   async function showWeather() {
+    if (!city) {
+      setIsShowError(true);
+      return;
+    }
+
     const value = await axios({
       method: "GET",
       url: `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`,

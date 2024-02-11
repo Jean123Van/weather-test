@@ -47,3 +47,13 @@
 .home-cntr > button {
   margin-top: 30px;
 }
+
+@media screen and (max-width: 500px) {
+  .home-cntr > h2 {
+    display: none;
+  }
+
+  .home-cntr > h3 {
+    display: none;
+  }
+}

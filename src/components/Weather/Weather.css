@@ -27,3 +27,9 @@ tbody > tr > td {
   background-color: white;
   padding: 5px 10px;
 }
+
+@media screen and (max-width: 655px) {
+  .hide-cell {
+    display: none;
+  }
+}
