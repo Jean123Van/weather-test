@@ -19,11 +19,11 @@
 }
 
 @media screen and (max-width: 500px) {
-  .navbar-cntr > h1 {
-    display: none;
-  }
-
   .navbar-cntr {
     height: 83px;
+  }
+
+  .hide-title {
+    display: none;
   }
 }

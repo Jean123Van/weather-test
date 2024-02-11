@@ -15,7 +15,7 @@ function Navbar(props) {
       <Link to="/">
         <FaCloudSunRain className="navbar-logo" />
       </Link>
-      <h1>Weather Forecast</h1>
+      <h1 className={isAuthenticated ? "hide-title" : ""}>Weather Forecast</h1>
       <button
         className="button-primary button-logout"
         style={{ display: display }}
