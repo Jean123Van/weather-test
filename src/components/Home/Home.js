@@ -12,7 +12,7 @@ function Home(props) {
   async function showWeather() {
     const value = await axios({
       method: "GET",
-      url: `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=ccfab6ed8ffcb012dedbd4447d7f81bf`,
+      url: `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`,
     }).catch(() => {
       throw new Error();
     });

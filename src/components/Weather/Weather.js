@@ -18,8 +18,10 @@ function Weather(props) {
   async function fetchWeather() {
     const value = await axios({
       method: "GET",
-      url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2a14c2c6a798c6f44b3081f334b44d7f&units=metric`,
-    }).catch(() => {});
+      url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}&units=metric`,
+    }).catch(() => {
+      throw new Error();
+    });
 
     setData(value.data);
 
